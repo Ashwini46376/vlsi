@@ -1,0 +1,10 @@
+magic
+tech scmos
+timestamp 1623174511
+<< nwell >>
+rect -27 18 3 38
+rect 21 18 51 38
+<< ndiffusion >>
+rect 4 -8 20 8
+rect 4 -27 20 -11
+<< end >>

@@ -1,0 +1,4 @@
+Equate pins:  cell inverter_std.spice and/or inverter_std.sp has no elements.
+Cells have no pins;  pin matching not needed.
+Device classes inverter_std.spice and inverter_std.sp are equivalent.
+Verify:  cell inverter_std.sp has no elements and/or nodes.  Not checked.
