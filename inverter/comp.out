@@ -1,0 +1,92 @@
+
+Subcircuit summary:
+Circuit 1: invert.spice                    |Circuit 2: simul.sp                        
+-------------------------------------------|-------------------------------------------
+scmosp (1)                                 |scmosp (1)                                 
+scmosn (1)                                 |scmosn (1)                                 
+c (5)                                      |(no matching element)                      
+vsrc (2)                                   |vsrc (2)                                   
+Number of devices: 9 **Mismatch**          |Number of devices: 4 **Mismatch**          
+Number of nets: 5                          |Number of nets: 5                          
+---------------------------------------------------------------------------------------
+NET mismatches: Class fragments follow (with fanout counts):
+Circuit 1: invert.spice                    |Circuit 2: simul.sp                        
+
+---------------------------------------------------------------------------------------
+Net: out                                   |Net: out                                   
+  scmosp/(drain|source) = 1                |  scmosp/(drain|source) = 1                
+  scmosn/(drain|source) = 1                |  scmosn/(drain|source) = 1                
+  c/bottom = 1                             |                                           
+  c/top = 1                                |                                           
+                                           |                                           
+Net: in                                    |Net: in                                    
+  scmosp/gate = 1                          |  scmosp/gate = 1                          
+  scmosn/gate = 1                          |  scmosn/gate = 1                          
+  c/bottom = 1                             |  vsrc/pos = 1                             
+  c/top = 1                                |                                           
+  vsrc/pos = 1                             |                                           
+                                           |                                           
+(no matching net)                          |Net: vdd                                   
+                                           |  scmosp/(drain|source) = 1                
+                                           |  scmosp/bulk = 1                          
+                                           |  vsrc/pos = 1                             
+                                           |                                           
+(no matching net)                          |Net: gnd                                   
+                                           |  scmosn/(drain|source) = 1                
+                                           |  scmosn/bulk = 1                          
+                                           |  vsrc/neg = 1                             
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Net: gnd                                   |(no matching net)                          
+  scmosn/(drain|source) = 1                |                                           
+  scmosn/bulk = 1                          |                                           
+  c/bottom = 3                             |                                           
+  vsrc/neg = 1                             |                                           
+                                           |                                           
+Net: vdd                                   |(no matching net)                          
+  scmosp/(drain|source) = 1                |                                           
+  scmosp/bulk = 1                          |                                           
+  c/top = 3                                |                                           
+  vsrc/pos = 1                             |                                           
+---------------------------------------------------------------------------------------
+DEVICE mismatches: Class fragments follow (with node fanout counts):
+Circuit 1: invert.spice                    |Circuit 2: simul.sp                        
+
+---------------------------------------------------------------------------------------
+Instance: c4                               |(no matching instance)                     
+  top = 6                                  |                                           
+  bottom = 6                               |                                           
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Instance: c3                               |(no matching instance)                     
+  top = 5                                  |                                           
+  bottom = 6                               |                                           
+                                           |                                           
+Instance: c2                               |(no matching instance)                     
+  top = 4                                  |                                           
+  bottom = 6                               |                                           
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Instance: c1                               |(no matching instance)                     
+  top = 6                                  |                                           
+  bottom = 5                               |                                           
+                                           |                                           
+Instance: c0                               |(no matching instance)                     
+  top = 6                                  |                                           
+  bottom = 4                               |                                           
+---------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------
+Instance: c4                               |Instance: scmosn1                          
+  pos = 5                                  |  pos = 3                                  
+  neg = 6                                  |  neg = 3                                  
+                                           |                                           
+Instance: c4                               |Instance: scmosn1                          
+  pos = 6                                  |  pos = 3                                  
+  neg = 1                                  |  neg = 1                                  
+---------------------------------------------------------------------------------------
+Netlists do not match.
+The top level cell failed pin matching.

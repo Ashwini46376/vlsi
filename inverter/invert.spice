@@ -1,0 +1,29 @@
+* SPICE3 file created from invert.ext - technology: scmos
+.lib /project2020/eda/ngspice-32/models/scn4m_subm/scmos_bsim4.lib nom
+
+M1000 out in vdd vdd scmosp w=2u l=0.4u
++  ad=8p pd=12u as=5.6p ps=9.6u
+M1001 out in gnd gnd scmosn w=2u l=0.4u
++  ad=8p pd=12u as=5.6p ps=9.6u
+C0 vdd out 0.13fF
+C1 vdd in 0.30fF
+C2 out gnd 0.12fF
+C3 in gnd 0.23fF
+C4 vdd gnd 3.42fF
+
+.temp 27
+.param vsupply=2.5
+.global vdd gnd
+vsup vdd 0 2.5
+vin in gnd pulse 0 2.5 10n 10p 10p 5n 10n
+
+.tran 5p 50n
+.control
+run
+plot v(in)+3 v(out)
+.endc
+
+*Measurements
+.measure tran tdiff trig v(in) val=1.25 fall=1 targ v(out) val=1.25 rise=1
+.end
+
